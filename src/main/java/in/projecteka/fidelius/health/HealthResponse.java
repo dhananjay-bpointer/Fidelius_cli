@@ -1,11 +1,13 @@
 package in.projecteka.fidelius.health;
 
+import java.util.Map;
+
 public class HealthResponse {
     private boolean status;
     private String message;
-    private Object data;
+    private Map<String, Object> data;
 
-    public HealthResponse(boolean status, String message, Object data) {
+    public HealthResponse(boolean status, String message, Map<String, Object> data) {
         this.status = status;
         this.message = message;
         this.data = data;
@@ -27,11 +29,11 @@ public class HealthResponse {
         this.message = message;
     }
 
-    public Object getData() {
+    public Map<String, Object> getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(Map<String, Object> data) {
         this.data = data;
     }
 }
