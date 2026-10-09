@@ -58,7 +58,6 @@ public class EncryptionController {
     }
 
     public String encrypt(byte[] xorOfRandom, String senderPrivateKey, String receiverPublicKey, String stringToEncrypt) throws Exception {
-        System.out.println("<------------------- ENCRYPTION -------------------->");
         // Generating shared secret
         String sharedKey = doECDH(getBytesForBase64String(senderPrivateKey), getBytesForBase64String(receiverPublicKey));
 
@@ -84,9 +83,6 @@ public class EncryptionController {
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
         }
-
-        System.out.println("EncryptedData: " + encryptedData);
-        System.out.println("<---------------- Done ------------------->");
         return encryptedData;
     }
 
